@@ -22,8 +22,6 @@ int main()
 		std::cout << std::endl;
 	}
 
-
-
 	/*
 	int Arr[10];
 	int Size = sizeof(Arr) / sizeof(Arr[0]);
