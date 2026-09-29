@@ -5,12 +5,97 @@
 
 int main()
 {
-	const int Row = 50;
-	const int Col = 50;
 
-	int Arr[Row][Col];
+	constexpr int Count = 5;
+	int Arr[Count][Count];
 
 
+	srand(time(NULL));
+	
+	for (int i = 0; i < Count; ++i)
+	{
+		for (int j = 0; j < Count; ++j)
+		{
+			Arr[i][j] = std::abs(std::rand() % 10);
+			printf("%i  ", Arr[i][j]);
+		}
+
+		int Sum = 0;
+		for (int& i : Arr[i])
+		{
+			Sum += i;
+		}
+
+		printf("| %i", Sum);
+
+		printf("\n");
+	}
+
+	for (int i = 0; i < Count; ++i)
+	{
+		printf("---");
+	}
+
+	printf("\n");
+
+	for (int i = 0; i < Count; ++i)
+	{
+		int Sum = 0;
+		for (int j = 0; j < Count; ++j)
+		{
+			Sum += Arr[j][i];
+		}
+
+		printf("%i ", Sum);
+
+		if (Sum <= 10)
+		{
+			printf(" ");
+		}
+	}
+
+
+
+
+
+	
+
+	/*
+	int ArrNew[Count];
+	int CountNoZero = 0;
+
+
+	for (int i = 0; i < Count; ++i)
+	{
+		if (Arr[i] != 0)
+		{
+			ArrNew[CountNoZero] = Arr[i];
+			++CountNoZero;
+		}
+	}
+
+	if (CountNoZero < Count)
+	{
+		for (int i = Count - CountNoZero; i < Count; ++i)
+		{
+			ArrNew[i] = -1;
+		}
+	}
+
+	for (int i = 0; i < Count; ++i)
+	{
+		Arr[i] = ArrNew[i];
+	}
+
+	printf("\n");
+
+	for (int& i : ArrNew)
+	{
+		printf("%i ", i);
+	}*/
+
+
+	/*
 	for (int i = 0; i < Row; ++i)
 	{
 		for (int j = 0; j < Col; ++j)
@@ -20,7 +105,7 @@ int main()
 		}
 
 		std::cout << std::endl;
-	}
+	}*/
 
 	/*
 	int Arr[10];
